@@ -9,14 +9,14 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.*;
 
 
 @SpringBootTest
 @TestPropertySource(locations = "classpath:application-test.properties")
 @AutoConfigureMockMvc
-public class BoardApiTest {
+public class BoardApiSaveTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -28,6 +28,7 @@ public class BoardApiTest {
         mockMvc.perform(post("/api/board/write")
                 .contentType("application/json")
                 .content(params))
+                .andDo(print())
                 .andExpect(status().isCreated());
     }
 }
