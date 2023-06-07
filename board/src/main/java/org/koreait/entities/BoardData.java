@@ -1,15 +1,13 @@
 package org.koreait.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
 @Entity
 @NoArgsConstructor @AllArgsConstructor
+//@EqualsAndHashCode(callSuper=false)
 public class BoardData extends BaseEntity {
 
     @Id @GeneratedValue
