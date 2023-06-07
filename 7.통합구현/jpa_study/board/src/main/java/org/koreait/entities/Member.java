@@ -9,6 +9,7 @@ import java.util.List;
 
 @Entity @Data @Builder
 @AllArgsConstructor @NoArgsConstructor
+//@EqualsAndHashCode(callSuper = true) //오류
 public class Member extends BaseEntity{
     @Id @GeneratedValue
     private Long userNo; //회원번호
@@ -30,8 +31,10 @@ public class Member extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
+    //@Builder.Default//오류
     private MemberType type=MemberType.USER; //USER - 사용자, ADMIN - 관리자
 
     @OneToMany(mappedBy = "member")
+    //@Builder.Default//오류
     private List<BoardData> boardDatas = new ArrayList<>();
 }
