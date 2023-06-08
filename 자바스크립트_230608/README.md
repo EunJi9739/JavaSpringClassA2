@@ -1,0 +1,5 @@
+window;
+
+window.locaion;
+
+location;
