@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/front/main}">
+    <main layout:fragment="content">
+        <table class="table-rows">
+            <thead>
+                <tr>
+                    <th>123</th>
+                    <th>123</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item, status:${list}" th:object="${item}">
+                    <td align="center" th:text="*{pName}"></td>
+                    <td>123</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</html>
